@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title> Rock Paper Scissors Project</title>
+	<script>
+
+	let playerScore = 0; // should only be set to 0 if the game/page is reset, or there is a winner
+	let computerScore = 0; // should only be set to 0 if the game/page is reset, or there is a winner
+
+function game() {
+
+	function computerPlay() {
+    	let compChoices = ["Rock", "Paper", "Scissors"];
+		return compChoices[Math.floor(Math.random()*compChoices.length)]; // Generates random number between 0-2 and selects the corresponding array element
+	}
+
+	let computerSelection = computerPlay();
+
+	let playerSelection = prompt("Choose Rock, Paper, Or Scissors" + " - " + "Player: " + " " + playerScore + " " + "Computer: " + " " + computerScore); // Assigns the player's selection
+
+	singleRound(playerSelection, computerSelection); // Runs each loop of the game
+
+	winner() // determines if the player or computer has 5 wins, if not, the game continues to loop.
+
+	function singleRound(playerSelection, computerSelection) {
+
+		computerSelection = computerPlay();
+
+		if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS") {
+			playerScore = playerScore + 1;
+			return alert("You Win! Rock Smashes Scissors!");
+		} else if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER") {
+			computerScore += 1;
+			return alert("You Lose! Paper Covers Rock!");
+		} else if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "ROCK") {
+			return alert("Tie! Rock Can't Beat Rock.");
+		} else if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS") {
+			computerScore += 1;
+			return alert("You Lose! Scissors Cuts Paper Up!");
+		} else if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK") {
+			playerScore += 1;
+			return alert("You Win! Paper Covers Rock!");
+		} else if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "PAPER") {
+			return alert("Tie! Keep stacking paper for your printer");
+		} else if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "SCISSORS") {
+			return alert("Tie! You just Scissored Each Other!");
+		} else if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK") {
+			computerScore += 1;
+			return alert("You Lose! Rock Smashes Scissors");
+		} else if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER") {
+			playerScore += 1;
+			return alert("You Win! Scissors Cut Paper Up!");
+		} else {
+			return alert("Please pick Paper, Rock or Scissors");
+		}
+
+	}
+
+	function winner() {
+		if (playerScore === 5) {
+			alert("You win! " + "Player: " + " " + playerScore + " " + "Computer: " + " " + computerScore);
+			playerScore = 0;
+			computerScore = 0;
+		} else if (computerScore === 5) {
+			alert("You lose! " + "Player: " + " " + playerScore + " " + "Computer: " + " " + computerScore);
+			playerScore = 0;
+			computerScore = 0;
+		}	else {
+
+		}
+	}
+}
+	</script>
+</head>
+<body>
+	
+
+
+
+
+</body>
+</html>
