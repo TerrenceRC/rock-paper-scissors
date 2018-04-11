@@ -1,0 +1,57 @@
+body {
+	margin: 0px;
+}
+
+.container {
+	background-color: #EEE;
+	padding-top: 40px;
+	height: 100%;
+	text-align: center;
+}
+
+button {
+	font-weight: bold;
+	text-align: center;
+	color: #333;
+	font-size: 20px;
+	height: 100px;
+	width: 120px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #77B;
+	margin: 0 20px 0 20px;
+}
+
+.score-div {
+	width: 75%;
+	height: 50px;
+	font-family: helvetica, arial;
+	background-color: white;
+	color: #666;
+	font-size: 40px;
+	text-align: center;
+	display: inline-block;
+	margin: 10px 30px 10px 30px;
+	font-weight: bold;
+	border-radius: 10px;
+
+}
+
+.scoreboard {
+	display: inline-block;
+	text-align: center;
+	width: 50%;
+}
+
+#playerscore, #computerscore {
+	margin-left: 30px;
+	font-weight: bold;
+	color: #77B;
+}
+
+#gameresult {
+	font-size: 50px;
+	font-family: helvetica, arial;
+	font-weight: bold;
+	color: #77B;
+}
